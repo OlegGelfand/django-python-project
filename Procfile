@@ -1,1 +1,1 @@
-web: gunicorn djano-coffee-app.wsgi --log-file -
+web: gunicorn coffee.wsgi --log-file -
