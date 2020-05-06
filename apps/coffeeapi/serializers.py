@@ -8,7 +8,7 @@ class BeanInfoSerializer(serializers.ModelSerializer): #passing serializers from
 
     class Meta:
         model = BeanInfo #telling which model we want
-        fields = ('id','company_name','description','owner','coffeeInfo','city_of_origin', 'harvested_in','company_size', 'created_at', 'updated_at', 'is_public')
+        fields = ('id','company_name','description','owner','coffeeinfo','city_of_origin', 'harvested_in','company_size', 'created_at', 'updated_at', 'is_public')
         #wanting to pass a foreign key so we want to mention owner outside of the foreign key before Meta
 
 class CoffeeInfoSerializer(serializers.ModelSerializer):

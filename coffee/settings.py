@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 # import django_heroku
 import os
 import datetime
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +26,7 @@ SECRET_KEY = '*0cbc=^qu(rw84bi8xf!*hmx$aerb&mtmofi%xrjznnk^e1@4$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'django-coffee-app.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -81,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pythondb',
         'USER': 'oleggelfand',
-        'PASSWORD': '11111111',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -143,7 +144,7 @@ USE_TZ = True
 # django_heroku.settings(locals())
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
 

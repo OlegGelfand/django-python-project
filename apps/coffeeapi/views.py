@@ -42,7 +42,7 @@ class CoffeeInfoViewSet(viewsets.ModelViewSet):
 
 class CoffeeInfoBeanInfo(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)#not only can they create but then can list
-#get all recipes
+#get all coffee
     def get_queryset(self):
         if self.kwargs.get("coffeeinfo_pk"):
              coffeeinfo = CoffeeInfo.objects.get(pk=self.kwagrs["coffeeinfo_pk"])
