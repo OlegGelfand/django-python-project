@@ -94,8 +94,22 @@ class BeanInfoViewSet(viewsets.ModelViewSet):
     def update(self, request, *args, **kwargs):
        beans = BeanInfo.object.get(pk=self.kwargs["pk"])
        if not request.user == BeanInfo.owner:
+
            raise PermissionDenied("you can't modify this bean information")
        return super().update(request, *args, *kwargs)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+class PublicBeanInfo(generics.ListAPIView):
+    permission_classes = (AllowAny,)
+    def get_queryset(self):
+        queryset = BeanInfo.objects.all().filter(is_public=True)
+        return queryset
+    serializer_class = BeanInfoSerializer
+class PublicBeanDetail(generics.RetrieveAPIView):
+    permission_classes = (AllowAny,)
+    def get_queryset(self):
+        queryset = BeanInfo.objects.all().filter(is_public=True)
+        return queryset
+    serializer_class = BeanInfoSerializer
